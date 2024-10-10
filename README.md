@@ -1,0 +1,2 @@
+I have implemented a process to convert flat files stored in S3 into Parquet format, and upload them back to S3 using Pandas, Boto3, and the s3fs library. The current functionality handles entire files at once, and I am looking to enhance it by adding chunked processing, where each chunk of the file is processed and saved as an individual Parquet file. Additionally, I am exploring a cleaner approach for uploading data back to S3, beyond the current method of using upload_fileobj from Boto3.
+
