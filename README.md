@@ -32,5 +32,9 @@ Taking SQS messages from populated queue and writing each row/message to S3 in p
 For s3 _write_parquet:
 Optimized the core logic to reduce the number of API calls and S3 requests, leading to lower operational costs. Implemented batch processing, storing 1000 rows at a time before converting them into a Pandas DataFrame and writing the data in Parquet format to S3. Integrated visibility timeouts to avoid immediate deletion of SQS messages, allowing other consumers to process the same messages after a set period. This change ensures efficient message processing while maintaining message availability for other consumers.
 
+for s3_flat_to_parquet_diff_prefix:
+I have implemented a process to convert flat files stored in S3 into Parquet format, and upload them back to S3 using Pandas, Boto3, and the s3fs library. The current functionality handles entire files at once, and I am looking to enhance it by adding chunked processing, where each chunk of the file is processed and saved as an individual Parquet file. Additionally, I am exploring a cleaner approach for uploading data back to S3, beyond the current method of using upload_fileobj from Boto3.
+
+
 
 
