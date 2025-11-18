@@ -35,6 +35,14 @@ Optimized the core logic to reduce the number of API calls and S3 requests, lead
 for s3_flat_to_parquet_diff_prefix:
 I have implemented a process to convert flat files stored in S3 into Parquet format, and upload them back to S3 using Pandas, Boto3, and the s3fs library. The current functionality handles entire files at once, and I am looking to enhance it by adding chunked processing, where each chunk of the file is processed and saved as an individual Parquet file. Additionally, I am exploring a cleaner approach for uploading data back to S3, beyond the current method of using upload_fileobj from Boto3.
 
+for sqs_queue_insert:
+We are able to successfully populate an SQS queue using each row from a selected flat file (csv).
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/4dd631d2-0a7d-4bad-88ce-6d269888cc72">
+
+<img width="1281" alt="image" src="https://github.com/user-attachments/assets/21f5743f-5c6a-4ad2-a9b0-9c52475488b5">
+
+
 
 
 
