@@ -29,7 +29,7 @@ We are also doing the following:
 For sqs_to_s3:
 Taking SQS messages from populated queue and writing each row/message to S3 in parquet format. To improve the current process, I am looking to extend the functionality by adding event-based triggers and batch processing. I want to process the rows, store the output in memory (using a dictionary that will be converted to a pandas df and then to a parquet file), and use visibility timeouts. Also looking to batch the delete process (instead of deleting each message one by one) using a helper function in order to limit the number of api calls.
 
-For s3 _write_parquet:
+For s3_write_parquet:
 Optimized the core logic to reduce the number of API calls and S3 requests, leading to lower operational costs. Implemented batch processing, storing 1000 rows at a time before converting them into a Pandas DataFrame and writing the data in Parquet format to S3. Integrated visibility timeouts to avoid immediate deletion of SQS messages, allowing other consumers to process the same messages after a set period. This change ensures efficient message processing while maintaining message availability for other consumers.
 
 for s3_flat_to_parquet_diff_prefix:
